@@ -1,44 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+using Random = UnityEngine.Random;
+using TMPro;
 
 public class Player : MonoBehaviour
 {
-    public float PlayerSpeed;
-    public GameObject WallPrefab; // 壁
-    // Start is called before the first frame update
+    NavMeshAgent Player_Nav;
+    GameObject GoalObj;
+    
+    [SerializeField] private GameObject hitoObj;
+    [SerializeField] private TextMeshPro target_num;
+    private int goal_number;
+
     void Start()
     {
-        
+        goal_number = Random.Range(0, 4);
+        Debug.Log("GoalNumber: " + goal_number);
+        Player_Nav = GetComponent<NavMeshAgent>();
+        GoalObj = GameObject.Find("Goal" + goal_number);
+
+        target_num = hitoObj.GetComponent<TextMeshPro>();
+    
+        // テキストに目標番号を表示
+        target_num.text = goal_number.ToString();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        // 移動
-        if(Input.GetKey(KeyCode.UpArrow))
+        if (GoalObj != null)
         {
-            transform.position += new Vector3(PlayerSpeed, 0f, 0f);
+            Player_Nav.SetDestination(GoalObj.transform.position);
         }
-        if(Input.GetKey(KeyCode.DownArrow))
-        {
-            transform.position -= new Vector3(PlayerSpeed, 0f, 0f);
-        }
-        if(Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.position -= new Vector3(0f, 0f, PlayerSpeed);
-        }
-        if(Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.position += new Vector3(0f, 0f, PlayerSpeed);
-        }
-        if(Input.GetKey(KeyCode.Space))
-        {
-            Instantiate(WallPrefab, transform.position, Quaternion.identity);
-        }
-
-
     }
 
-
+    void OnCollisionEnter(Collision col)
+    {
+        if(col.gameObject.tag == "Goal")
+        {
+            Destroy(this.gameObject);
+            // Debug.Log("当たった");
+        }
+    }
 }

@@ -6,6 +6,10 @@ TagManager:
   tags:
   - target1
   - target2
+  - Goal
+  - hito
+  - chkPoint
+  - Hanni
   layers:
   - Default
   - TransparentFX

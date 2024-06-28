@@ -5,7 +5,34 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/Main.unity
+  - enabled: 0
+    path: Assets/Scenes/futinobe02.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 0
+    path: Assets/Scenes/Main.unity
+    guid: 7e8f07ab61dc5414d857469a4d4f7614
+  - enabled: 0
+    path: Assets/Scenes/futinobe03.unity
+    guid: 6d99ca24857374269ae0eaa2a4c7128d
+  - enabled: 0
+    path: Assets/Scenes/AStarSample.unity
+    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 0
+    path: Assets/Scenes/futinobe01.unity
+    guid: b6100186980f24dbd8c195660f436358
+  - enabled: 0
+    path: Assets/Scenes/futinobe04.unity
+    guid: b70789c2b060e4765915679dc1907033
+  - enabled: 0
+    path: Assets/Scenes/futinobe04_2.unity
+    guid: c96f2178292ae499fb216c73b973b481
+  - enabled: 0
+    path: Assets/Scenes/futinobe05.unity
+    guid: 1d1a7db01d08a4b48becb84c5a3eac2f
+  - enabled: 0
+    path: Assets/Scenes/futinobe05_2.unity
+    guid: 6cb55e19e9c78477abe25491702018c6
+  - enabled: 1
+    path: Assets/Scenes/futinobe05_3.unity
+    guid: 1a4567868312c4e6885ee806e8100d98
   m_configObjects: {}
